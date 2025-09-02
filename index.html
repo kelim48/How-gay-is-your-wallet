@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Gayness Analyzer 🏳️‍🌈</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app container">
+      <header class="topbar">
+        <h1>Crypto Gayness Analyzer</h1>
+        <p class="subtitle">Playful on-chain analyzer — Enter a Solana wallet to get a percentage, a custom phrase, and a shareable image.</p>
+      </header>
+
+      <section class="card input-card">
+        <label for="address">Solana wallet address</label>
+        <input id="address" placeholder="Enter wallet address (or paste)" autocomplete="off" />
+        <div class="row">
+          <button id="analyzeBtn" class="btn primary">Analyze</button>
+          <button id="randomBtn" class="btn ghost">Random</button>
+        </div>
+        <div class="help small">Tip: For a real on-chain analysis, add an RPC or Helius key in the settings (see README inside the project).</div>
+      </section>
+
+      <section class="card result-card hidden" id="resultCard">
+        <div class="result-top">
+          <canvas id="pfpCanvas" width="96" height="96" class="pfp"></canvas>
+          <div class="score-block">
+            <div id="gauge" class="gauge">
+              <div id="gaugeFill" class="gauge-fill"></div>
+            </div>
+            <div class="score-text"><span id="scoreValue">0</span>%</div>
+            <div id="phrase" class="phrase">...</div>
+          </div>
+        </div>
+
+        <div class="result-details" id="explain">
+          <!-- explanation will be injected here -->
+        </div>
+
+        <div class="row actions">
+          <button id="shareBtn" class="btn primary">Share Image</button>
+          <button id="downloadBtn" class="btn ghost">Download Image</button>
+          <button id="resetBtn" class="btn small">Reset</button>
+        </div>
+
+        <div id="toast" class="toast hidden"></div>
+      </section>
+
+      <footer class="footer small">
+        Made with ❤️ — completely for fun. Do not use to make serious judgments about people.
+      </footer>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
